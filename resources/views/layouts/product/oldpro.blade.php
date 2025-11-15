@@ -14,7 +14,7 @@ data-inventory-quantity="" data-available="true" data-max-stock="100">
         @csrf
         <div class="product-thumbnail pos-relative">
             <a class="image_thumb pos-relative embed-responsive embed-responsive-1by1"
-                href="{{ route('detailProduct', ['cate' => $pro['cate_slug'], 'type' => $pro['type_slug'] ?? 'loai', 'id' => $pro['slug']]) }}"
+                href="{{route('detailProduct',['cate'=>$pro['cate_slug'],'type'=>$pro['type_slug'] ? $pro['type_slug'] : 'loai','id'=>$pro['slug']])}}"
                 title="{{ $pro['name'] }}">
                 <img loading="lazy"
                     class='lazyload product-thumbnail__img product-thumbnail__img--primary'
@@ -95,7 +95,7 @@ data-inventory-quantity="" data-available="true" data-max-stock="100">
                                     <div class="head-qv group-status">
                                         <h3 class="qwp-name title-product"><a
                                                 class="text2line"
-                                                href="{{ route('detailProduct', ['cate' => $pro['cate_slug'], 'type' => $pro['type_slug'] ?? 'loai', 'id' => $pro['slug']]) }}"
+                                                href="{{route('detailProduct',['cate'=>$pro['cate_slug'],'type'=>$pro['type_slug'] ? $pro['type_slug'] : 'loai','id'=>$pro['slug']])}}"
                                                 title="{{ $pro['name'] }}">{{ $pro['name'] }}</a>
                                         </h3>
                                         <div class="vend-qv group-status">
@@ -224,7 +224,7 @@ data-inventory-quantity="" data-available="true" data-max-stock="100">
         </div>
         <div class="product-info">
             <h3 class="product-name line-camp-2"><a
-                    href="{{ route('detailProduct', ['cate' => $pro['cate_slug'], 'type' => $pro['type_slug'] ?? 'loai', 'id' => $pro['slug']]) }}"
+                    href="{{route('detailProduct',['cate'=>$pro['cate_slug'],'type'=>$pro['type_slug'] ? $pro['type_slug'] : 'loai','id'=>$pro['slug']])}}"
                     title="{{ $pro['name'] }}">
                     {{ $pro['name'] }}</a></h3>
             <div class="product-variants">
