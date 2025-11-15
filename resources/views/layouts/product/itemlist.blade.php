@@ -19,7 +19,7 @@
             enctype="multipart/form-data">
             <div class="product-thumbnail">
                 <a class="image_thumb scale_hover"
-                    href="{{ route('detailProduct', ['cate' => $pro['cate_slug'], 'type' => $pro['type_slug'] ? $pro['type_slug'] : 'loai', 'id' => $pro['slug']]) }}"
+                    href="{{ route('detailProduct', ['cate' => $pro['cate_slug'], 'type' => $pro['type_slug'] ?? 'loai', 'id' => $pro['slug']]) }}"
                     title="{{ $pro['name'] }}">
                     <img class="lazyload duration-300 image1" src="{{ $img[0] }}" data-src="{{ $img[0] }}"
                         alt="{{ $pro['name'] }}">
@@ -40,7 +40,7 @@
             </div>
             <div class="product-info">
                 <h3 class="product-name line-clamp-2-new">
-                    <a href="{{ route('detailProduct', ['cate' => $pro['cate_slug'], 'type' => $pro['type_slug'] ? $pro['type_slug'] : 'loai', 'id' => $pro['slug']]) }}"
+                    <a href="{{ route('detailProduct', ['cate' => $pro['cate_slug'], 'type' => $pro['type_slug'] ?? 'loai', 'id' => $pro['slug']]) }}"
                         title="{{ $pro['name'] }}">{{ $pro['name'] }}</a>
                 </h3>
                 @php
@@ -68,7 +68,7 @@
                     <input class="hidden" type="hidden" name="variantId" value="1" />
                     
                         <button class="btn-cart btn-views" title="Xem chi tiết" type="button"
-                            onclick="window.location.href='{{ route('detailProduct', ['cate' => $pro['cate_slug'], 'type' => $pro['type_slug'] ? $pro['type_slug'] : 'loai', 'id' => $pro['slug']]) }}'">
+                            onclick="window.location.href='{{ route('detailProduct', ['cate' => $pro['cate_slug'], 'type' => $pro['type_slug'] ?? 'loai', 'id' => $pro['slug']]) }}'}">
                             Xem chi tiết
                 </div>
             </div>
