@@ -48,7 +48,6 @@ class ProductController extends Controller
             },
         ])->where('slug', $id)->first(['id', 'name', 'images', 'type_cate', 'category', 'sku', 'discount', 'price', 'content', 'size', 'description', 'slug', 'preserve', 'status_variant', 'created_at', 'species', 'variant', 'cate_slug', 'type_slug','status','km','ingredient']);
         // session()->forget('viewoldpro'); 
-        
         $oldProduct = session()->get('viewoldpro', []);
         if (!isset($oldProduct[$data['product']->id])) {
             $oldProduct[$data['product']->id] = [
@@ -60,7 +59,6 @@ class ProductController extends Controller
                 'price' => $data['product']->price,
                 'size' => $data['product']->size,
                 'km' => $data['product']->km,
-                
                 'discount' => $data['product']->discount,
                 'cate_slug' => $data['product']->cate_slug,
                 'type_slug' => $data['product']->type_slug,
@@ -70,7 +68,7 @@ class ProductController extends Controller
             session()->put('viewoldpro', $oldProduct);
         }
         $data['productlq'] = Product::where('category', $data['product']->category)->limit(8)->get(['id', 'category', 'name', 'status_variant', 'discount', 'price', 'images', 'slug', 'cate_slug', 'type_slug', 'description', 'preserve', 'size', 'variant']);
-        $data['random'] = Product::where('status', 1)->inRandomOrder()->limit(5)->get(['id', 'category', 'name', 'status_variant', 'discount', 'price', 'images', 'slug', 'cate_slug', 'type_slug', 'description', 'preserve', 'size', 'variant']);
+        
         // Thêm dữ liệu linksp từ trường ingredient nếu có
         if (!empty($data['product']->ingredient)) {
             $data['linksp'] = json_decode($data['product']->ingredient, true);
@@ -98,7 +96,6 @@ class ProductController extends Controller
         } else {
             $data['phantram'] = 0;
         }
-        
         
         return view('product.detail', $data);
     }
