@@ -32,7 +32,6 @@ public function updateSTTCategory(Request $request)
     public function add(Request $request, Category $category)
     {
         $data = $category->saveCate($request);
-        dd($data);
         return response()->json([
     		'message' => 'Save Success',
     		'data'=> $data

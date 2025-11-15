@@ -22,7 +22,7 @@
                     font-size="40px"
                   />
                 </div>
-                <div class="form-group">
+                <!-- <div class="form-group">
                   <label>Icon đại diện</label>
                   <image-upload
                     :oldImage="objData.avatar"
@@ -39,19 +39,19 @@
                     type="avatar"
                     :title="'trang-chu'"
                   ></image-upload>
-                </div>
+                </div> -->
                 <!-- <div class="form-group">
                 <label>Nội dung</label>
                  <TinyMce v-model="objData.content" />
                 </div> -->
-                  <div class="form-group">
+                  <!-- <div class="form-group">
                 <label>Vị trí menu</label>
                   <vs-input
                     class="w-100"
                     v-model="objData.link_demo"
                     font-size="40px"
                   />
-                </div>
+                </div> -->
                 <div class="form-group">
                   <label for="exampleInputName1">Trạng thái</label>
                   <vs-select v-model="objData.status"
@@ -126,9 +126,9 @@ export default {
     saveEdit() {
       this.errors = [];
       if(this.objData.name[0].content == '') this.errors.push('Tên danh mục không được để trống');
-      if(!this.objData.link_demo || this.objData.link_demo.trim() === '') {
-  this.errors.push('Vị trí không được để trống');
-  }
+  //     if(!this.objData.link_demo || this.objData.link_demo.trim() === '') {
+  // this.errors.push('Vị trí không được để trống');
+  // }
       if (this.errors.length > 0) {
         this.errors.forEach((value, key) => {
           this.$error(value)

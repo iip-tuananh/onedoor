@@ -34,7 +34,7 @@
                       </div>
                     </div>
                 </div>
-                <div class="form-group">
+                <!-- <div class="form-group">
                   <label>Icon đại diện</label>
                   <image-upload
               
@@ -42,8 +42,8 @@
                     type="avatar"
                     :title="'danh-muc'"
                   ></image-upload>
-                </div>
-                <div class="form-group">
+                </div> -->
+                <!-- <div class="form-group">
                   <label>Ảnh đại diện</label>
                   <image-upload
              
@@ -51,12 +51,12 @@
                     type="avatar"
                     :title="'trang-chu'"
                   ></image-upload>
-                </div>
-                <div class="form-group">
+                </div> -->
+                <!-- <div class="form-group">
                     <label>Vị trí menu</label>
                     <vs-input  font-size="40px"
                     label-placeholder="Vị trí menu" type="number" class="w-100" v-model="objData.link_demo" />
-                </div>
+                </div> -->
                 <div class="form-group">
                   <label for="exampleInputName1">Trạng thái</label>
                   <vs-select v-model="objData.status"
@@ -140,9 +140,8 @@ components: {
         this.saveCategory(this.objData)
         .then(response => {
             this.loadings(false);
-            this.$router.push({ name: "list_category" });
             this.$success("Thêm danh mục thành công");
-            this.$route.push({ name: "list_category" });
+            this.$router.push({ name: "list_category" });
           })
           .catch(error => {
             this.loadings(false);

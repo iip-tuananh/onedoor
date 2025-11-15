@@ -28,7 +28,7 @@
                 </div>
               </div>
               <div class="form-group">
-                <label>Mô tả ngắn khuyến mãi trang chi tiết</label>
+                <label>Mô tả ngắn  trang chi tiết ( bên cạnh sản phẩm dưới giá)</label>
                 <TinyMce v-model="objData.description[0].content" />
                 <el-button size="small" @click="showSettingLangExist('description')">Đa ngôn ngữ</el-button>
                  <div class="dropLanguage" v-if="showLang.description == true">
@@ -104,7 +104,7 @@
                     </div>
                 </div> -->
 
-              <div class="variant" v-if="objData.status_variant == true && VariantSku.length == 0" style="background: #f6f6fb; padding: 7px;">
+              <!-- <div class="variant" v-if="objData.status_variant == true && VariantSku.length == 0" style="background: #f6f6fb; padding: 7px;">
                 <div class="form-group" >
                   <vs-select
                     autocomplete
@@ -167,7 +167,7 @@
                       </vs-table>
                     </div>
                 </div>
-              </div>
+              </div> -->
               <div class="row">
               <div class="form-group col-6">
                 <label>Giá Sản phẩm</label>
@@ -190,6 +190,9 @@
                 />
               </div>
               </div>
+              <div class="row">
+            <i>&nbsp;&nbsp;&nbsp;&nbsp;Khi giá bán ra bằng giá gốc thì nhập cả hai loại giá (yêu cầu nhập cả hai loại giá)</i>
+            </div>
             </div>
           </div>
         </div>

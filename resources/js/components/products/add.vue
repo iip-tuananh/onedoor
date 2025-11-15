@@ -35,7 +35,7 @@
               </div>
             </div>
             <div class="form-group">
-              <label>Mô tả ngắn khuyến mãi trang chi tiết</label>
+              <label>Mô tả ngắn trang chi tiết</label>
               <TinyMce v-model="objData.description[0].content" />
               <el-button
                 size="small"
@@ -57,7 +57,7 @@
               </div>
             </div>
             <div class="form-group">
-              <label>Khuyến mãi</label>
+              <label>Bảng thông sô kỹ thuật trang chi tiết</label>
               <TinyMce v-model="objData.km[0].content" />
               <el-button size="small" @click="showSettingLangExist('km')"
                 >Đa ngôn ngữ</el-button
@@ -172,9 +172,10 @@
                 </div>
               </div>
             </div> -->
+            
             <div class="row">
               <div class="form-group col-6">
-                <label>Giá Sản phẩm</label>
+                <label>Giá Sản phẩm (giá gốc)</label>
                 <vs-input
                   type="number"
                   size="default"
@@ -184,7 +185,7 @@
                 />
               </div>
               <div class="form-group col-6" v-if="variantstatus == false">
-                <label>Giá bán ra</label>
+                <label>Giá bán ra (hoặc giá khuyến mãi)</label>
                 <vs-input
                   type="number"
                   size="default"
@@ -193,6 +194,9 @@
                   v-model="objData.discount"
                 />
               </div>
+            </div>
+            <div class="row">
+            <i>&nbsp;&nbsp;&nbsp;&nbsp;Khi giá bán ra bằng giá gốc thì nhập cả hai loại giá (yêu cầu nhập cả hai loại giá)</i>
             </div>
           </div>
         </div>

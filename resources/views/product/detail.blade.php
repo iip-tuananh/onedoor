@@ -131,21 +131,26 @@
                         {!! languageName($product->description) !!}
                      </div>
 
+                     @php
+                        $validKhuyenmai = !empty($khuyenmai) ? collect($khuyenmai)->filter(function($item) {
+                            return !empty($item->detail);
+                        }) : collect();
+                     @endphp
+                     
+                     @if ($validKhuyenmai->count() > 0)
                      <div class="khuyen-mai">
                         <h3 class="title">
                            Chương Trình Khuyến Mãi
                         </h3>
                         <div class="content">
                            <ul>
-                            @foreach ($khuyenmai as $item)
-                            
+                            @foreach ($validKhuyenmai as $item)
                                 <li>{{ $item->detail }}</li>
                             @endforeach
-                              
-                              
                            </ul>
                         </div>
                      </div>
+                     @endif
                      @if ($product->price > 0)
                         @if ($product->discount > 0 && $phantram > 0 && $product->status_variant != 1)
                            <div class="price-box clearfix">
