@@ -304,26 +304,26 @@
                            </div>
                         </a>
                         <div class="product-favi-content">
-                            @foreach ($random as $item)
+                            @foreach ($random as $pro)
                             @php
-                                $imgs = json_decode($item->images)
+                                $imgs = json_decode($pro->images)
                             @endphp
-                            @if(!empty($item->cate_slug) && !empty($item->slug))
+                            @if(!empty($pro->cate_slug) && !empty($pro->slug))
                                 <div class="product-view">
                                 <div class="image_thumb">
-                                    <a class="box_img_pro" href="{{route('detailProduct', ['cate' => $item->cate_slug, 'type' => $item->type_slug ?? 'loai', 'id' => $item->slug])}}" title="{{ $item->name }}">
-                                    <img width="480" height="480" class="lazyload" src="{{$imgs[0]}}"  data-src="{{$imgs[0]}}" alt="{{ $item->name }}">
+                                    <a class="box_img_pro" href="{{route('detailProduct',['cate'=>$pro['cate_slug'],'type'=>$pro['type_slug'] ? $pro['type_slug'] : 'loai','id'=>$pro['slug']])}}">
+                                    <img width="480" height="480" class="lazyload" src="{{$imgs[0]}}"  data-src="{{$imgs[0]}}" alt="{{ $pro->name }}">
                                     </a>
                                 </div>
                                 <div class="product-info">
-                                    <h3 class="product-name"><a href="{{route('detailProduct', ['cate' => $item->cate_slug, 'type' => $item->type_slug ?? 'loai', 'id' => $item->slug])}}" title="{{ $item->name }}">{{ $item->name }}</a></h3>
+                                    <h3 class="product-name"><a href="{{route('detailProduct',['cate'=>$pro['cate_slug'],'type'=>$pro['type_slug'] ? $pro['type_slug'] : 'loai','id'=>$pro['slug']])}}">{{ $pro->name }}</a></h3>
                                     <div class="price-box">
-                                        @if ($item->price > 0)
-                                            @if ($item->discount > 0)
-                                                <span class="price">{{ number_format($item->discount, 0, ',', '.') }}₫</span>
-                                                <span class="compare-price">{{ number_format($item->price, 0, ',', '.') }}₫</span>
+                                        @if ($pro->price > 0)
+                                            @if ($pro->discount > 0)
+                                                <span class="price">{{ number_format($pro->discount, 0, ',', '.') }}₫</span>
+                                                <span class="compare-price">{{ number_format($pro->price, 0, ',', '.') }}₫</span>
                                             @else
-                                                <span class="price">{{ number_format($item->price, 0, ',', '.') }}₫</span>
+                                                <span class="price">{{ number_format($pro->price, 0, ',', '.') }}₫</span>
                                             @endif
                                         @else
                                             <span class="price">Đang cập nhật</span>
@@ -384,26 +384,26 @@
                            </div>
                         </a>
                         <div class="product-favi-content">
-                            @foreach ($random as $item)
+                            @foreach ($random as $pro)
                             @php
-                                $imgs = json_decode($item->images)
+                                $imgs = json_decode($pro->images)
                             @endphp
-                            @if(!empty($item->cate_slug) && !empty($item->slug))
+                            @if(!empty($pro->cate_slug) && !empty($pro->slug))
                                 <div class="product-view">
                                 <div class="image_thumb">
-                                    <a class="box_img_pro" href="{{route('detailProduct', ['cate' => $item->cate_slug, 'type' => $item->type_slug ?? 'loai', 'id' => $item->slug])}}" title="{{ $item->name }}">
-                                    <img width="480" height="480" class="lazyload" src="{{ $imgs[0] }}"  data-src="{{ $imgs[0] }}" alt="{{ $item->name }}">
+                                    <a class="box_img_pro" href="{{route('detailProduct',['cate'=>$pro['cate_slug'],'type'=>$pro['type_slug'] ? $pro['type_slug'] : 'loai','id'=>$pro['slug']])}}">
+                                    <img width="480" height="480" class="lazyload" src="{{ $imgs[0] }}"  data-src="{{ $imgs[0] }}" alt="{{ $pro->name }}">
                                     </a>
                                 </div>
                                 <div class="product-info">
-                                    <h3 class="product-name"><a href="{{route('detailProduct', ['cate' => $item->cate_slug, 'type' => $item->type_slug ?? 'loai', 'id' => $item->slug])}}" title="{{ $item->name }}">{{ $item->name }}</a></h3>
+                                    <h3 class="product-name"><a href="{{route('detailProduct',['cate'=>$pro['cate_slug'],'type'=>$pro['type_slug'] ? $pro['type_slug'] : 'loai','id'=>$pro['slug']])}}">{{ $pro->name }}</a></h3>
                                     <div class="price-box">
-                                        @if ($item->price > 0)
-                                            @if ($item->discount > 0)
-                                                <span class="price">{{ number_format($item->discount, 0, ',', '.') }}₫</span>
-                                                <span class="compare-price">{{ number_format($item->price, 0, ',', '.') }}₫</span>
+                                        @if ($pro->price > 0)
+                                            @if ($pro->discount > 0)
+                                                <span class="price">{{ number_format($pro->discount, 0, ',', '.') }}₫</span>
+                                                <span class="compare-price">{{ number_format($pro->price, 0, ',', '.') }}₫</span>
                                             @else
-                                                <span class="price">{{ number_format($item->price, 0, ',', '.') }}₫</span>
+                                                <span class="price">{{ number_format($pro->price, 0, ',', '.') }}₫</span>
                                             @endif
                                         @else
                                             <span class="price">Đang cập nhật</span>

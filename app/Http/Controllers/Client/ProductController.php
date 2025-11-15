@@ -68,7 +68,8 @@ class ProductController extends Controller
             session()->put('viewoldpro', $oldProduct);
         }
         $data['productlq'] = Product::where('category', $data['product']->category)->limit(8)->get(['id', 'category', 'name', 'status_variant', 'discount', 'price', 'images', 'slug', 'cate_slug', 'type_slug', 'description', 'preserve', 'size', 'variant']);
-        
+        $data['random'] = Product::where('status', 1)->inRandomOrder()->limit(5)->get(['id', 'category', 'name', 'status_variant', 'discount', 'price', 'images', 'slug', 'cate_slug', 'type_slug', 'description', 'preserve', 'size', 'variant']);
+
         // Thêm dữ liệu linksp từ trường ingredient nếu có
         if (!empty($data['product']->ingredient)) {
             $data['linksp'] = json_decode($data['product']->ingredient, true);
