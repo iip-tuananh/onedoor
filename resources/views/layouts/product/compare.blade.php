@@ -10,7 +10,7 @@
                        src="{{ $item['image'] }}" alt="{{ $item['name'] }}"></div>
            </div>
            <p class="m-0 text-sm sm:text-base"><a target="_blank"
-                   href="{{ route('detailProduct', ['cate' => $item['cate_slug'], 'type' => $item['type_slug'] ? $item['type_slug'] : 'loai', 'id' => $item['pro_slug']]) }}"
+                   href="{{ route('detailProduct', ['cate' => $item['cate_slug'], 'type' => $item['type_slug'] ?? 'loai', 'id' => $item['pro_slug']]) }}"
                    title="{{ $item['name'] }}"
                    class="font-semibold text-rose-600 block w-full leading-6 text-ellipsis overflow-hidden whitespace-nowrap">{{ $item['name'] }}</a>
            </p>

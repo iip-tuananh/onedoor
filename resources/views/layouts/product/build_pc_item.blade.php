@@ -10,7 +10,7 @@
        <div class="col-6 p-0">
           <div class="css-pbiq9j">
              <div>
-                <a target="_blank" href="{{route('detailProduct',['cate'=>$item['cate_slug'],'type'=>$item['type_slug'] ? $item['type_slug'] : 'loai','id'=>$item['slug']])}}" rel="noreferrer noopener" target="_blank" class="css-587jha">
+                <a target="_blank" href="{{route('detailProduct',['cate'=>$item['cate_slug'],'type'=>$item['type_slug'] ?? 'loai','id'=>$item['slug']])}}" rel="noreferrer noopener" target="_blank" class="css-587jha">
                    <div class="css-10htszn">
                       <h3 class="css-1xdyrhj">{{$item->name}}</h3>
                    </div>

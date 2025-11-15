@@ -104,7 +104,7 @@
 				  </div>
 			   </div>
 			   <div class="product-content">
-				  <div class="product-title"><a href="{{route('detailProduct',['cate'=>$item->cate_slug,'type'=>$item->type_slug ? $item->type_slug : 'loai','id'=>$item->slug])}}">pentair controller</a></div>
+				  <div class="product-title"><a href="{{route('detailProduct',['cate'=>$item->cate_slug,'type'=>$item->type_slug ?? 'loai','id'=>$item->slug])}}">pentair controller</a></div>
 				  <div class="product-price"><span>{{$item->price > 0 ? number_format($item->price).'đ' : 'Liên hệ'}}</span></div>
 			   </div>
 			</div>

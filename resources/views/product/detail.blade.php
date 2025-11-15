@@ -194,6 +194,7 @@
                         <div class="box-variant clearfix  d-none ">
                            <input type="hidden" id="one_variant" name="variantId" value="168201963" />
                         </div>
+                        @if ($product->price > 0 || $product->discount > 0)
                         <div class="boz-form ">
                            <div class="flex-quantity">
                               <div class="custom custom-btn-number show">
@@ -214,6 +215,13 @@
                               </div>
                            </div>
                         </div>
+                        @else
+                        <div class="boz-form ">
+                           <div class="product-unavailable">
+                              <p class="text-muted" style="font-style: italic; padding: 15px 0;">Sản phẩm đang cập nhật giá. Vui lòng liên hệ để biết thêm thông tin.</p>
+                           </div>
+                        </div>
+                        @endif
                      </div>
                   </div>
                   <div class="col-xl-3 col-lg-3 col-md-12 col-12">

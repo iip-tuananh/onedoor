@@ -702,13 +702,19 @@
                             
                             response.products.forEach(function(product) {
                                 const price = product.discount > 0 ? product.discount : product.price;
-                                const priceFormatted = new Intl.NumberFormat('vi-VN').format(price) + 'đ';
+                                let priceDisplay = '';
+                                
+                                if (price > 0) {
+                                    priceDisplay = '<div style="color: #e74c3c; font-weight: 600;">' + new Intl.NumberFormat('vi-VN').format(price) + 'đ</div>';
+                                } else {
+                                    priceDisplay = '<div style="color: #999; font-style: italic;">Liên hệ</div>';
+                                }
                                 
                                 html += '<a href="' + product.url + '" class="search-item-ajax" style="display: flex; padding: 10px; border-bottom: 1px solid #f0f0f0; text-decoration: none; color: inherit; align-items: center;">';
                                 html += '<img src="' + product.image + '" alt="' + product.name + '" style="width: 50px; height: 50px; object-fit: cover; border-radius: 4px; margin-right: 10px;">';
                                 html += '<div style="flex: 1;">';
                                 html += '<div style="font-weight: 500; margin-bottom: 4px;">' + product.name + '</div>';
-                                html += '<div style="color: #e74c3c; font-weight: 600;">' + priceFormatted + '</div>';
+                                html += priceDisplay;
                                 html += '</div>';
                                 html += '</a>';
                             });

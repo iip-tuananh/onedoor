@@ -1,6 +1,6 @@
 @foreach ($product as $item)
 <li class="products-block">
-    <a href="{{route('detailProduct',['id'=>$item->id])}}" class="product-link">
+    <a href="{{route('detailProduct',['cate'=>$item->cate_slug ?? 'danh-muc','type'=>$item->type_slug ?? 'loai','id'=>$item->slug])}}" class="product-link">
     @php
         $img = json_decode($item->images);
     @endphp

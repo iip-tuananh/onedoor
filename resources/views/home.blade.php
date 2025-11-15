@@ -1216,7 +1216,7 @@
                                                     @csrf
                                                     <div class="product-thumbnail">
                                                         <a class="image_thumb scale_hover"
-                                                            href="{{ route('detailProduct', ['cate' => $pro['cate_slug'], 'type' => $pro['type_slug'] ? $pro['type_slug'] : 'loai', 'id' => $pro['slug']]) }}"
+                                                            href="{{ route('detailProduct', ['cate' => $pro['cate_slug'], 'type' => $pro['type_slug'] ?? 'loai', 'id' => $pro['slug']]) }}"
                                                             title="{{ $pro['name'] }}">
                                                             <img class="lazyload duration-300 image1"
                                                                 src="{{ $img[0] }}" data-src="{{ $img[0] }}"
@@ -1275,7 +1275,7 @@
                                                           
                                                                 <button class="btn-cart btn-views" title="Xem chi tiết"
                                                                     type="button"
-                                                                    onclick="window.location.href='{{ route('detailProduct', ['cate' => $pro['cate_slug'], 'type' => $pro['type_slug'] ? $pro['type_slug'] : 'loai', 'id' => $pro['slug']]) }}'">
+                                                                    onclick="window.location.href='{{ route('detailProduct', ['cate' => $pro['cate_slug'], 'type' => $pro['type_slug'] ?? 'loai', 'id' => $pro['slug']]) }}'">
                                                                     Xem chi tiết
                                                                 </button>
                                                            
