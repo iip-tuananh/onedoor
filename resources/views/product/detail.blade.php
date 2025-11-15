@@ -127,6 +127,10 @@
                         </span>
                         </span>
                      </div>
+                     <div class="motangan">
+                        {!! languageName($product->description) !!}
+                     </div>
+
                      <div class="khuyen-mai">
                         <h3 class="title">
                            Chương Trình Khuyến Mãi
@@ -134,6 +138,7 @@
                         <div class="content">
                            <ul>
                             @foreach ($khuyenmai as $item)
+                            
                                 <li>{{ $item->detail }}</li>
                             @endforeach
                               

@@ -328,14 +328,16 @@ class ProductController extends Controller
         $keyword = $request->keyword;
         $products = Product::where('name', 'LIKE', '%' . $keyword . '%')
             ->where('status', 1)
+            ->whereNotNull('cate_slug')
+            ->whereNotNull('slug')
             ->take(5)
             ->get()
             ->map(function ($product) {
                 return [
                     'name' => $product->name,
                     'url' => route('detailProduct', [
-                        'cate' => $product->cate_slug,
-                        'type' => $product->type_slug ? $product->type_slug : 'loai',
+                        'cate' => $product->cate_slug ?? 'danh-muc',
+                        'type' => $product->type_slug ?? 'loai',
                         'id' => $product->slug
                     ]),
                     'image' => !empty($product->images) ? json_decode($product->images)[0] : '',
